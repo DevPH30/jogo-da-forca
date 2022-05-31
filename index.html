@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="Vector.png" alt="">
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="menu-section">
+                <div class="menu-content">
+                    <button id="startBtn" class="main-button" onclick="goToGamePage()">Começar a jogar</button>
+                    <button id="addNewWordBtn" class="second-button" onclick="goToNewWordPage()">Adicionar nova palavra</button>
+                </div>
+            </section>
+
+            <section class="game-section hide">
+                <input type="text" class="hidden-input">
+
+                <div class="game-content">
+                    <div class="hangman-img">
+                        <img src="./assets/tries/6-try.svg" alt="" id="man">
+                    </div>
+            
+                    <div class="user-right-letters">
+                    </div>
+
+                    <div class="user-wrong-letters">
+                        <span></span>
+                    </div>
+
+                    <div class="won-game-message">
+                        Parabéns, você venceu!
+                    </div>
+
+                    <div class="lost-game-message">
+                        Infelizmente suas tentativas acabaram e você perdeu!
+                    </div>
+
+                    <div class="buttons">
+                        <button id="newGameBtn" class="main-button" onclick="newGame()">Novo jogo</button>
+                        <button id="surrenderBtn" class="second-button" onclick="surrender()">Desistir</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-word-section hide">
+                <div class="new-word-content">
+                    <textarea name="word" id="wordInput" placeholder="Digite uma palavra ou frase"></textarea>
+
+                    <div class="buttons">
+
+                        <div class="sucess-message-add">
+                            Nova palavra adicionada com sucesso!
+                        </div>
+
+                        <button id="saveWordBtn" class="main-button" onclick="addNewWord()">Salvar</button>
+                        <button id="cancelBtn" class="second-button" onclick="returnToMenu()">Cancelar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
